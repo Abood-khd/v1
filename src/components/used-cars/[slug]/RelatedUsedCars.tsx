@@ -91,6 +91,52 @@ const allCarsData: CarData[] = [
   },
 ];
 
+
+const NextArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="absolute top-1/2 -translate-y-1/2 right-[-18px] z-10 w-9 h-9 flex items-center justify-center bg-white rounded-full shadow-md cursor-pointer"
+    >
+      <svg
+        className="w-7 h-7 text-[#265CA2]"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fillRule="evenodd"
+          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </div>
+  );
+};
+
+const PrevArrow = (props: any) => {
+  const { onClick } = props;
+  return (
+    <div
+      onClick={onClick}
+      className="absolute top-1/2 -translate-y-1/2 left-[-18px] z-10 w-9 h-9 flex items-center justify-center bg-white rounded-full shadow-md cursor-pointer"
+    >
+      <svg
+        className="w-7 h-7 text-[#265CA2]"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fillRule="evenodd"
+          d="M12.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 111.414 1.414L9.414 10l3.293 3.293a1 1 0 010 1.414z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </div>
+  );
+};
+
+
 const PopularUsedCars = () => {
   const settings = {
     dots: true,
@@ -99,6 +145,8 @@ const PopularUsedCars = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     dotsClass: 'slick-dots custom-dots',
     responsive: [
       {

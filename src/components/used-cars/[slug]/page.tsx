@@ -10,7 +10,7 @@ import ShareBox from './ShareBox';
 export default function CarDetailsPage() {
   return (
     <div>
-      <div className="lg:w-[1400px] w-full md:px-4 mx-auto py-8">
+      <div className="xl:w-[1400px] w-full md:px-4 mx-auto py-8">
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-2/3 space-y-4">
             <CarGallery />
