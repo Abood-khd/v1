@@ -5,6 +5,7 @@ import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
+import type { CustomArrowProps } from 'react-slick';
 
 const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
@@ -92,8 +93,7 @@ const allCarsData: CarData[] = [
 ];
 
 
-const NextArrow = (props: any) => {
-  const { onClick } = props;
+const NextArrow = ({ onClick }: CustomArrowProps)  => {
   return (
     <div
       onClick={onClick}
@@ -114,8 +114,7 @@ const NextArrow = (props: any) => {
   );
 };
 
-const PrevArrow = (props: any) => {
-  const { onClick } = props;
+const PrevArrow = ({ onClick }: CustomArrowProps) => {
   return (
     <div
       onClick={onClick}
