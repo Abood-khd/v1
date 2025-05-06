@@ -3,15 +3,15 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {  Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Thumbs } from 'swiper/modules';
+import type { Swiper as SwiperClass } from 'swiper/types';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import YallamotorServices from './YallamotorServices';
 import CarDescription from './CarDescription';
-import SellCarHighlight from './SellCarSection';
 
 const carImages = [
   { id: 1, path: '/car/webp_listing_main_1.webp' },
@@ -37,7 +37,7 @@ const features = [
   ];
 
 export default function CarGallery() {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 

@@ -3,7 +3,6 @@ import {
     FaTwitter,
     FaWhatsapp,
   } from "react-icons/fa";
-  import { HiOutlineHeart } from "react-icons/hi";
   import { HiOutlineBell } from "react-icons/hi2";
   import { MdEmail } from "react-icons/md";
   
