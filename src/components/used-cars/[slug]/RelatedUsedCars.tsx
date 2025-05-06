@@ -137,8 +137,8 @@ const PopularUsedCars = () => {
   };
 
   return (
-    <div className="w-full bg-[#fff] py-10 px-4 md:px-16">
-      <div className="flex justify-between items-center mb-6">
+    <div className="w-full bg-[#fff] py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-16">
+      <div className="flex   sm:flex-row justify-between items-center gap-3 mb-6">
         <h2 className="text-2xl md:text-3xl font-semibold text-[#000]">
           Related Used Cars
         </h2>
@@ -149,31 +149,32 @@ const PopularUsedCars = () => {
 
       <Slider {...settings}>
         {allCarsData.map((car, index) => (
-          <div key={index} className="px-2 pb-4">
-            <div className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="relative h-[180px]">
-                <Image
-                  src={car.image}
-                  alt={car.name}
-                  width={300}
-                  height={150}
-                  className="w-full h-full object-cover md:px-8 bg-[#EEEEEE]"
-                />
+         <div key={index} className="px-2 pb-4">
+         <div className="relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+           <div className="relative h-[160px] sm:h-[180px] md:h-[200px]">
+             <Image
+               src={car.image}
+               alt={car.name}
+               width={300}
+               height={150}
+               className="w-full h-full object-cover md:px-8 bg-[#EEEEEE]"
+             />
 
-                <div className="absolute top-2 left-2 flex flex-col md:flex-row gap-1 z-10">
-                  {car.featured && (
-                    <span className="bg-[#9C2B2E] text-white text-[13px] font-semibold px-2 py-0.5 rounded">
-                      FEATURED
-                    </span>
-                  )}
-                  {car.certified && (
-                    <span className="bg-[#027A48] text-white text-[13px] font-semibold px-2 py-0.5 rounded">
-                      CERTIFIED
-                    </span>
-                  )}
-                </div>
+             <div className="absolute top-2 left-2 flex flex-col md:flex-row gap-1 z-10">
+               {car.featured && (
+                 <span className="bg-[#9C2B2E] text-white text-[13px] font-semibold px-2 py-0.5 rounded">
+                   FEATURED
+                 </span>
+               )}
+               {car.certified && (
+                 <span className="bg-[#027A48] text-white text-[13px] font-semibold px-2 py-0.5 rounded">
+                   CERTIFIED
+                 </span>
+               )}
+             </div>
 
-                <div className="absolute top-2 right-1 bg-white p-1.5 rounded-full shadow-md z-10">
+
+             <div className="absolute top-2 right-1 bg-white p-1.5 rounded-full shadow-md z-10">
                   <svg
                     className="w-4 h-4 text-gray-400"
                     fill="currentColor"
@@ -188,18 +189,18 @@ const PopularUsedCars = () => {
                 </div>
               </div>
 
-              <div className="p-3 flex flex-col justify-between md:h-[120px]">
+              <div className="p-2 sm:p-3 flex flex-col justify-between h-auto md:h-[120px]">
                 <div>
-                  <h3 className="md:text-[14px] font-medium text-[#000] hover:text-[#124d99] line-clamp-2  ">
+                  <h3 className="text-sm sm:text-[14px] font-medium text-[#000] hover:text-[#124d99] line-clamp-2">
                     {car.name}
                   </h3>
-                  <p className="text-md font-semibold text-[#124d99]">
+                  <p className="text-sm sm:text-md font-semibold text-[#124d99]">
                     {car.price}
                   </p>
                 </div>
                 <div className="text-md text-[#868686] ">
                   <p>{car.location}</p>
-                  <div className="flex flex-wrap gap-4 text-md font-light text-[#3b3b3b] mt-1 ">
+                  <div className="flex flex-wrap gap-1 md:gap-4 text-md font-light text-[#3b3b3b] mt-1 ">
                     <span>{car.mileage?.toLocaleString() || '0'} KM</span>
                     <span>|</span>
                     <span>{car.transmission}</span>

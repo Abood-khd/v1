@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function SellCarSection() {
   return (
-    <section className="bg-[#F7F7F7] py-6 px-4 md:px-20 w-full">
+    <section className="bg-[#F7F7F7] py-6 px-2 md:px-20 w-full">
       <div className="text-center md:text-left">
-        <h2 className="text-3xl md:text-3xl font-semibold text-[#111]">
+        <h2 className="text-[23px] md:text-3xl font-semibold text-[#111]">
           Do you want to sell your car for{" "}
           <span className="text-[#124d99]">FREE</span>?
         </h2>
@@ -16,7 +16,7 @@ export default function SellCarSection() {
         </p>
       </div>
 
-      <div className="mt-12 flex flex-col md:flex-row items-start  gap-10 md:gap-30 ">
+      <div className="mt-12 flex flex-col md:flex-row md:items-start items-center  gap-10 md:gap-30 ">
         <div className="flex-shrink-0 w-[300px]">
           <Image
             src="/car/ym-car1-750d6e0ea0667b9a10a258e58bc13fc0b0aadc17d676a766d5784e6cd62b2d70.png"
@@ -65,7 +65,7 @@ export default function SellCarSection() {
 
       <div className=" flex items-center justify-center gap-4 relative md:bottom-15">
       <img src='/car/right.png' className="mb-5" alt="right"  />
-        <button className="bg-[#00d084] hover:bg-[#00b874] text-white text-sm font-bold py-3 px-8 rounded shadow-md transition">
+        <button className="bg-[#00d084] hover:bg-[#00b874] text-white text-[11px] md:text-sm font-bold md:py-3 md:px-8 py-2 px-4 rounded shadow-md transition">
           SELL YOUR CAR FOR FREE
         </button>
         <img src='/car/left.png'className="mb-5"      alt="left" />

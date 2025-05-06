@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import "./styles/globals.css";
 
-import MobileBottomNav from "@/app/@core/layout/MobileBottomNav";
 import Footer from "./@core/layout/Footer";
 
 export const metadata: Metadata = {
@@ -34,7 +33,6 @@ export default function RootLayout({
       <div className="flex flex-col min-h-screen overflow-hidden">
         <div className="flex-1">{children}</div>
         <Footer />
-        <MobileBottomNav />
       </div>
     </body>
   </html>

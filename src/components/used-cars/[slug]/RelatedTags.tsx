@@ -21,17 +21,17 @@ const tags = [
 
 export default function RelatedTags() {
   return (
-    <section className="md:py-10 px-4 md:px-18 bg-white">
-      <h2 className="text-2xl font-semibold text-[#1a1a1a] mb-4">
+    <section className="py-6 sm:py-8 md:py-10 px-4 sm:px-6 md:px-18 bg-white">
+      <h2 className="text-xl sm:text-2xl font-semibold text-[#1a1a1a] mb-4">
         People also search for
       </h2>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="grid grid-cols-1 md:flex md:flex-wrap gap-2">
         {tags.map((tag, index) => (
           <Link
             key={index}
             href={tag.href}
-            className="bg-gray-100 hover:underline transition-colors text-[15px] rounded-lg px-5 py-2.5 text-[#2784fc] whitespace-nowrap"
+            className="bg-gray-100 hover:underline transition-colors text-sm sm:text-[15px] rounded-lg px-4 sm:px-5 py-2 sm:py-2.5 text-[#2784fc] whitespace-nowrap"
           >
             {tag.label}{" "}
             <span className="text-gray-600 font-normal">({tag.count})</span>

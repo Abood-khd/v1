@@ -15,7 +15,7 @@ export default function ContactPanel() {
       <div className="space-y-3">
         <div className="flex items-center justify-center gap-2">
           <span className="bg-[#FFFAE7] text-[#FFB910] text-1xs font-medium px-2 py-1 mt-2 rounded-full flex items-center gap-1">
-              <img src="/car/Screenshot 2025-05-05 140121.png" className='objict-cover w-5 ' alt="Screenshot" />
+              <img src="/car/Screenshot 2025-05-05 140121.png" className='objict-cover w-4 md:w-5 ' alt="Screenshot" />
             Fair Deal
           </span>
         </div>
@@ -23,6 +23,9 @@ export default function ContactPanel() {
         <p className="text-xl sm:text-1xl text-center  text-gray-900">
           AED <span className="text-3xl tracking-wide font-semibold">193,999</span>
         </p>
+
+
+        
 
         <div className="space-y-2 pt-0">
           <button className="w-full bg-[#003B73] hover:bg-[#124D99] text-white text-md font-semibold py-2.5 rounded flex items-center justify-center gap-2">
@@ -59,6 +62,9 @@ export default function ContactPanel() {
             Whatsapp
           </button>
         </div>
+
+
+
       </div>
 
     
@@ -81,21 +87,35 @@ export default function ContactPanel() {
             />
           </div>
 
-          <div className="space-y-1">
-            <label className="text-md  text-gray-700">Select Tenure (Years):</label>
-            <select
-              value={tenure}
-              onChange={(e) => setTenure(e.target.value)}
-              className="w-full border border-gray-300 rounded mt-1 px-3 py-2 text-md bg-white focus:outline-none focus:ring focus:ring-blue-600"
-            >
-              <option value="">Select Tenure</option>
-              <option value="1">1 Year</option>
-              <option value="2">2 Years</option>
-              <option value="3">3 Years</option>
-              <option value="4">4 Years</option>
-              <option value="5">5 Years</option>
-            </select>
-          </div>
+          <div className="relative space-y-1 cursor-pointer">
+  <label className="text-md text-gray-700">Select Tenure (Years):</label>
+  <div className="relative">
+    <select
+      value={tenure}
+      onChange={(e) => setTenure(e.target.value)}
+      className="w-full border border-gray-300 rounded mt-1 px-3 py-2 text-md bg-white focus:outline-none focus:ring focus:ring-blue-600 appearance-none pr-10"
+    >
+      <option value="">Select Tenure</option>
+      <option value="1">1 Year</option>
+      <option value="2">2 Years</option>
+      <option value="3">3 Years</option>
+      <option value="4">4 Years</option>
+      <option value="5">5 Years</option>
+    </select>
+
+    <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+      <svg
+        className="w-6 h-6 text-gray-400"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        <path d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
+</div>
 
           <button
             className="w-full border border-[#ACC1DB] text-[#ACC1DB] font-semibold py-2 rounded text-md"

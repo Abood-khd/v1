@@ -26,38 +26,58 @@ const prices: PriceRow[] = [
 
 export default function PatrolPriceTable() {
   return (
-    <section className="bg-[#f9f9f9] md:py-18 px-4 md:px-18">
-      <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-[#000]">
+    <section className="bg-[#f9f9f9] py-6 sm:py-8 md:py-18 px-4 sm:px-6 md:px-18">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 text-[#000]">
         Used Nissan Patrol by price in UAE
       </h2>
 
-      <div className="bg-[#f3f3f3] p-2 md:px-4 rounded-xl shadow-sm overflow-hidden border border-gray-200">
-        <div className="overflow-x-auto">
-          <table className="min-w-full text-[15px] text-gray-800 bg-white rounded-lg overflow-hidden border-separate border-spacing-0">
-            <thead className="bg-[#f3f3f3] text-center text-gray-700 font-semibold border-b border-gray-300">
+      <div className="hidden md:block bg-[#f3f3f3] p-2 sm:p-3 md:px-4 rounded-xl shadow-sm overflow-hidden border border-gray-200">
+        <div className="w-full overflow-x-auto">
+          <table className="min-w-full text-[16px] text-gray-800 bg-white rounded-lg overflow-hidden border-separate border-spacing-0">
+            <thead className="bg-[#f3f3f3] text-center text-gray-500 font-bold border-b border-gray-300">
               <tr>
-                <th className="py-3 font-semibold text-gray-500 text-md px-6 border-b border-gray-200">Used Cars</th>
-                <th className="py-3 font-semibold text-gray-500 text-md px-6 border-b border-gray-200">Starting Price</th>
-                <th className="py-3 font-semibold text-gray-500 text-md px-6 border-b border-gray-200">Maximum Price</th>
-                <th className="py-3 font-semibold text-gray-500 text-md px-6 border-b border-gray-200">Average Price</th>
-                <th className="py-3 font-semibold text-gray-500 text-md px-6 border-b border-gray-200">Cars Available</th>
+                <th className="py-3 px-6 border-b border-gray-200">Used Cars</th>
+                <th className="py-3 px-6 border-b border-gray-200">Starting Price</th>
+                <th className="py-3 px-6 border-b border-gray-200">Maximum Price</th>
+                <th className="py-3 px-6 border-b border-gray-200">Average Price</th>
+                <th className="py-3 px-6 border-b border-gray-200">Cars Available</th>
               </tr>
             </thead>
             <tbody>
               {prices.map((row, idx) => (
-              <tr key={idx} className="text-center border-b border-gray-50  ">
-              <td className="py-5 px-6 border-r border-gray-100 text-[#0a4ba2] border-b font-medium ">
-                <Link href={row.url}>Used Nissan Patrol {row.year}</Link>
-              </td>
-              <td className="py-5 px-6 border-r border-b border-gray-100">{row.start}</td>
-              <td className="py-5 px-6 border-r border-gray-100 border-b">{row.max}</td>
-              <td className="py-5 px-6 border-r border-gray-100 border-b">{row.avg}</td>
-              <td className="py-5 px-6 border-r border-gray-100 border-b">{row.count}</td>
-            </tr>
+                <tr key={idx} className="text-center border-b border-gray-50">
+                  <td className="py-5 px-6 text-[#0a4ba2] font-medium">
+                    <Link href={row.url}>Used Nissan Patrol {row.year}</Link>
+                  </td>
+                  <td className="py-5 px-6">{row.start}</td>
+                  <td className="py-5 px-6">{row.max}</td>
+                  <td className="py-5 px-6">{row.avg}</td>
+                  <td className="py-5 px-6">{row.count}</td>
+                </tr>
               ))}
             </tbody>
           </table>
         </div>
+      </div>
+
+      <div className="block md:hidden bg-white">
+        {prices.map((row, idx) => (
+          <div key={idx} className="bg-white p-4    border-t border-gray-100">
+            <div className="flex justify-between items-center mb-1">
+              <h3 className="text-sm font-semibold text-black">
+                Used Nissan Patrol {row.year}
+              </h3>
+              <span className="text-sm text-gray-500">{row.year}</span>
+            </div>
+            <p className="text-sm text-[#124d99] mb-1">
+              From {row.start} - Max: {row.max}
+            </p>
+            <div className="flex justify-between items-center text-sm text-gray-700">
+              <p>Average Price: {row.avg}</p>
+              <p className="text-black font-semibold">Cars: {row.count}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
